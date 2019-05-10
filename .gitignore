@@ -3,6 +3,7 @@
 # compiled output
 /lib
 /tmp
+/spec
 
 # dependencies
 /node_modules

@@ -20,7 +20,7 @@
         "animation"
     ],
     "scripts": {
-        "test": "jest --config jestconfig.json",
+        "test": "",
         "build": "tsc",
         "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
         "lint": "tslint -p tsconfig.json",
