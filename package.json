@@ -1,10 +1,12 @@
 {
     "name": "@typewriterjs/typewriterjs",
+    "version": "1.0.0-alpha.0",
     "description": "TypeScript library for animating the display of text being typed on the screen.",
-    "version": "1.0.0",
     "author": "reactgular.com",
     "homepage": "https://typewriterjs.com/",
     "license": "MIT",
+    "main": "lib/public-api.js",
+    "types": "lib/public-api.d.ts",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/typewriterjs/typewriterjs.git"
@@ -18,13 +20,19 @@
         "animation"
     ],
     "scripts": {
+        "test": "jest --config jestconfig.json",
         "build": "tsc",
-        "lint": "tslint -p tsconfig.json"
+        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+        "lint": "tslint -p tsconfig.json",
+        "prepublishOnly": "npm test && npm run lint",
+        "preversion": "npm run lint"
     },
-    "dependencies": {},
     "devDependencies": {
         "rxjs": "~6.5.1",
         "tslint": "^5.16.0",
         "typescript": "~3.2.2"
-    }
+    },
+    "files": [
+        "lib/**/*"
+    ]
 }
