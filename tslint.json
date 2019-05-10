@@ -1,7 +1,6 @@
 {
     "extends": "tslint:recommended",
     "rulesDirectory": [
-        "codelyzer"
     ],
     "rules": {
         "array-type": false,
@@ -62,15 +61,8 @@
             "single"
         ],
         "trailing-comma": false,
-        "no-output-on-prefix": true,
         "use-input-property-decorator": false,
         "use-output-property-decorator": false,
-        "use-host-property-decorator": false,
-        "no-input-rename": true,
-        "no-output-rename": true,
-        "use-life-cycle-interface": true,
-        "use-pipe-transform-interface": true,
-        "component-class-suffix": true,
-        "directive-class-suffix": true
+        "use-host-property-decorator": false
     }
 }

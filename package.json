@@ -5,18 +5,26 @@
     "author": "reactgular.com",
     "homepage": "https://typewriterjs.com/",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/typewriterjs/typewriterjs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/typewriterjs/typewriterjs/issues"
+    },
     "keywords": [
         "typewriter",
         "library",
         "animation"
     ],
     "scripts": {
-        "build": "tsc"
+        "build": "tsc",
+        "lint": "tslint -p tsconfig.json"
     },
-    "dependencies": {
-        "rxjs": "~6.5.1"
-    },
+    "dependencies": {},
     "devDependencies": {
+        "rxjs": "~6.5.1",
+        "tslint": "^5.16.0",
         "typescript": "~3.2.2"
     }
 }
