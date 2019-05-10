@@ -5,11 +5,11 @@ export function isFirstRow(b: BufferEvent): boolean {
 }
 
 export function isLastRow(b: BufferEvent): boolean {
-    return b.row === b.text.length - 1;
+    return b.text.length ? b.row === b.text.length - 1 : true;
 }
 
 export function isEndOfLine(b: BufferEvent): boolean {
-    return b.column === b.text[b.row].length;
+    return b.text.length ? b.column === b.text[b.row].length : true;
 }
 
 export function isStartOfLine(b: BufferEvent): boolean {
@@ -17,7 +17,13 @@ export function isStartOfLine(b: BufferEvent): boolean {
 }
 
 export function isOutOfRange(b: BufferEvent): boolean {
-    return b.row < 0 || b.column < 0 || b.row > b.text.length - 1 || b.column > b.text[b.row].length;
+    if (b.row < 0 || b.column < 0) {
+        return true;
+    }
+    if (b.text.length === 0) {
+        return b.row !== 0 || b.column !== 0;
+    }
+    return b.row > b.text.length - 1 || b.column > b.text[b.row].length;
 }
 
 export function isStartOfFile(b: BufferEvent): boolean {
