@@ -20,7 +20,8 @@
         "animation"
     ],
     "scripts": {
-        "test": "",
+        "test": "jest",
+        "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
         "build": "tsc",
         "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
         "lint": "tslint -p tsconfig.json",
@@ -28,7 +29,11 @@
         "preversion": "npm run lint"
     },
     "devDependencies": {
+        "@types/jest": "^24.0.12",
+        "coveralls": "^3.0.3",
+        "jest": "^24.8.0",
         "rxjs": "~6.5.1",
+        "ts-jest": "^24.0.2",
         "tslint": "^5.16.0",
         "typescript": "~3.2.2"
     },
