@@ -1,0 +1,22 @@
+{
+    "name": "@typewriterjs/typewriterjs",
+    "description": "TypeScript library for animating the display of text being typed on the screen.",
+    "version": "1.0.0",
+    "author": "reactgular.com",
+    "homepage": "https://typewriterjs.com/",
+    "license": "MIT",
+    "keywords": [
+        "typewriter",
+        "library",
+        "animation"
+    ],
+    "scripts": {
+        "build": "tsc"
+    },
+    "dependencies": {
+        "rxjs": "~6.5.1"
+    },
+    "devDependencies": {
+        "typescript": "~3.2.2"
+    }
+}
