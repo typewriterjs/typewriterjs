@@ -1,4 +1,5 @@
 import {eventsAppend} from '../../internal/events/events-append';
+import {escapeHtml} from '../../internal/utils/escape-html';
 import {splitCss} from '../../internal/utils/split-css';
 import {EventsOperator} from '../event-queue';
 import {DelayEvent, KeyPressEvent} from '../events';
@@ -10,7 +11,7 @@ import {CssClassEvent} from '../events/css-class.event';
 export function typeChars(characters: string): EventsOperator {
     return eventsAppend(() => {
         const events: DelayEvent[] = [];
-        splitCss(characters,
+        splitCss(escapeHtml(characters),
             (css) => {
                 events.push({type: 'css', value: css, delay: 0} as CssClassEvent);
                 return null;
