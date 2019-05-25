@@ -11,13 +11,13 @@ import {CssClassEvent} from '../events/css-class.event';
 export function typeChars(characters: string): EventsOperator {
     return eventsAppend(() => {
         const events: DelayEvent[] = [];
-        splitCss(escapeHtml(characters),
+        splitCss(characters,
             (css) => {
                 events.push({type: 'css', value: css, delay: 0} as CssClassEvent);
                 return null;
             },
             (text) => {
-                text.split('').forEach(value => events.push({type: 'key', value} as KeyPressEvent));
+                text.split('').forEach(value => events.push({type: 'key', value: escapeHtml(value)} as KeyPressEvent));
                 return null;
             }
         );

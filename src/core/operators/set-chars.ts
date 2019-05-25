@@ -10,9 +10,9 @@ import {CssClassEvent} from '../events/css-class.event';
  */
 export function setChars(value: string): EventsOperator {
     return eventsAppend(() => {
-        return splitCss(escapeHtml(value),
+        return splitCss(value,
             (css) => ({type: 'css', value: css, delay: 0} as CssClassEvent),
-            (text) => ({type: 'set', value: text, delay: 0} as SetEvent)
+            (text) => ({type: 'set', value: escapeHtml(text), delay: 0} as SetEvent)
         );
     });
 }
